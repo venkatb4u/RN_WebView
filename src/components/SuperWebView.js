@@ -13,15 +13,15 @@ function prepareForBridge(message) {
   return JSON.stringify(message).replace(/'/g, '__@@__');
 }
 
-let VIEW;
-const scriptURL = SourceCode.scriptURL;
-if (scriptURL.indexOf('file://') > -1) {
-  const _bundleSourcePath = scriptURL.substring(7, scriptURL.lastIndexOf('/') + 1);
-  const name = require('./prodViewUri');
-  VIEW = { uri: `${_bundleSourcePath}${name}` };
-} else {
-  VIEW = require('../webviews/view.html');
-}
+let VIEW = require('../webviews/view.html');
+// const scriptURL = SourceCode.scriptURL;
+// if (scriptURL.indexOf('file://') > -1) {
+//   const _bundleSourcePath = scriptURL.substring(7, scriptURL.lastIndexOf('/') + 1);
+//   const name = require('./prodViewUri');
+//   VIEW = { uri: `${_bundleSourcePath}${name}` };
+// } else {
+//   VIEW = require('../webviews/view.html');
+// }
 
 export default class SuperWebView extends Component {
   constructor(...args) {
