@@ -11,8 +11,9 @@ const WebViewExample = () => {
    return (
       <View style = {styles.container}>
          <WebView
-            // source = {{ uri: 'https://www.google.com/?gws_rd=cr,ssl&ei=SICcV9_EFqqk6ASA3ZaABA#q=tutorialspoint' }}
-            source = {{ uri: 'https://www.google.com' }}
+            // source = {{ uri: require('../../webviews/view.html') }}
+            // source = {{ uri: '../../webviews/view.html' }}
+            source = {{ uri: 'https://react-dnd.github.io/react-dnd/examples-chessboard-tutorial-app.html' }}
          />
       </View>
    )
